@@ -1,7 +1,7 @@
 # railway.toml
 [build]
 # Comando para instalar dependencias
-install = "bun install"
+install = "bun install --omit=dev"
 
 # Comando para construir la aplicación Vite
 build = "bun run build"
