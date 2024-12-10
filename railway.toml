@@ -1,0 +1,13 @@
+# railway.toml
+[build]
+# Comando para instalar dependencias
+install = "bun install"
+
+# Comando para construir la aplicación Vite
+build = "bun run build"
+
+# Comando para servir los archivos generados por Vite
+start = "bun run preview"
+
+[env]
+# Railway asignará automáticamente la variable PORT
