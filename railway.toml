@@ -2,6 +2,8 @@
 [build]
 # Comando para instalar dependencias
 install = "bun install --omit=dev"
+builder = "nixpacks"
+buildCommand = "bun install && bunx --bun vite build --outDir dist/client && bunx --bun vite build --ssr src/entry-server.tsx --outDir dist/server"
 
 # Comando para construir la aplicación Vite
 build = "bun run build"
@@ -9,5 +11,13 @@ build = "bun run build"
 # Comando para servir los archivos generados por Vite
 start = "bun run preview"
 
+[deploy]
+startCommand = "bun run server.js"
+healthcheckPath = "/"
+healthcheckTimeout = 100
+
 [env]
 # Railway asignará automáticamente la variable PORT
+
+[nixpacks]
+runtime = "bun"
